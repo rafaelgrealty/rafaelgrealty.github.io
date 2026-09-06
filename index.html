@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rafael Gutierrez | Real Estate</title>
+  <style>
+    :root{
+      --navy:#0b2c5f;
+      --blue:#143f7a;
+      --light:#f4f7fb;
+      --text:#172033;
+      --muted:#667085;
+      --white:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg,#eef3f9 0%,#ffffff 100%);
+      color:var(--text);
+    }
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .card{
+      width:100%;
+      max-width:520px;
+      background:var(--white);
+      border-radius:24px;
+      box-shadow:0 18px 50px rgba(11,44,95,.14);
+      overflow:hidden;
+      border:1px solid #e7ecf3;
+    }
+    .top{
+      background:var(--navy);
+      color:white;
+      padding:34px 28px 28px;
+      text-align:center;
+    }
+    .brand{
+      font-size:15px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      opacity:.9;
+      margin-bottom:20px;
+    }
+    h1{
+      margin:0;
+      font-size:34px;
+      line-height:1.05;
+    }
+    .role{
+      margin-top:10px;
+      font-size:18px;
+      font-weight:700;
+    }
+    .dre{
+      margin-top:6px;
+      font-size:15px;
+      opacity:.9;
+    }
+    .tag{
+      margin-top:16px;
+      font-size:17px;
+      line-height:1.4;
+    }
+    .spanish{
+      display:inline-block;
+      margin-top:12px;
+      padding:7px 12px;
+      border:1px solid rgba(255,255,255,.45);
+      border-radius:999px;
+      font-size:14px;
+      letter-spacing:1px;
+      font-weight:700;
+    }
+    .content{padding:26px}
+    .contact{
+      display:grid;
+      gap:12px;
+    }
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      text-decoration:none;
+      color:white;
+      background:var(--blue);
+      padding:15px 16px;
+      border-radius:14px;
+      font-weight:700;
+      font-size:17px;
+    }
+    .btn.secondary{
+      background:#eef3f9;
+      color:var(--navy);
+      border:1px solid #d8e1ec;
+    }
+    .info{
+      margin-top:22px;
+      padding:18px;
+      background:var(--light);
+      border-radius:16px;
+      line-height:1.55;
+    }
+    .info strong{color:var(--navy)}
+    .address{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .services{
+      margin-top:20px;
+      text-align:center;
+      font-weight:700;
+      color:var(--navy);
+      letter-spacing:1px;
+    }
+    .footer{
+      text-align:center;
+      padding:0 26px 26px;
+      color:var(--muted);
+      font-size:13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main class="card">
+      <section class="top">
+        <div class="brand">Coldwell Banker Envision</div>
+        <h1>Rafael Gutierrez</h1>
+        <div class="role">REALTOR®</div>
+        <div class="dre">DRE #02244154</div>
+        <div class="tag">Real Estate &amp; Investment Property Advisor</div>
+        <div class="spanish">HABLAMOS ESPAÑOL</div>
+      </section>
+
+      <section class="content">
+        <div class="contact">
+          <a class="btn" href="tel:+14242626008">📞 Call (424) 262-6008</a>
+          <a class="btn" href="tel:+16236940386">📱 Cell (623) 694-0386</a>
+          <a class="btn secondary" href="mailto:rafael@rafaelgrealty.com">✉️ rafael@rafaelgrealty.com</a>
+        </div>
+
+        <div class="info">
+          <strong>Office</strong>
+          <div class="address">
+            1225 W. 190th St., Suite 105<br>
+            Gardena, CA 90248
+          </div>
+        </div>
+
+        <div class="services">BUY &nbsp; | &nbsp; SELL &nbsp; | &nbsp; INVEST &nbsp; | &nbsp; BUILD WEALTH</div>
+      </section>
+
+      <div class="footer">
+        Real People. Real Opportunities.<br>
+        Each Office is Independently Owned and Operated.
+      </div>
+    </main>
+  </div>
+</body>
+</html>
