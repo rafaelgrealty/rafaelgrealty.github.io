@@ -7,6 +7,7 @@ TITLE:REALTOR
 TEL;TYPE=WORK,VOICE:4242626008
 TEL;TYPE=CELL,VOICE:6236940386
 EMAIL;TYPE=INTERNET:rafael@rafaelgrealty.com
+PHOTO;VALUE=URI:https://rafaelgrealty.github.io/rafael%20pic%201.jpg
 ADR;TYPE=WORK:;;1225 W. 190th St.\, Suite 105;Gardena;CA;90248;USA
 NOTE:DRE #02244154 | Real Estate & Investment Property Advisor | Hablamos Español
 END:VCARD
