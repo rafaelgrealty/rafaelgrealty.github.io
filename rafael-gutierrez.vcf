@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Gutierrez;Rafael;;;
+FN:Rafael Gutierrez
+ORG:Coldwell Banker Envision
+TITLE:REALTOR
+TEL;TYPE=WORK,VOICE:4242626008
+TEL;TYPE=CELL,VOICE:6236940386
+EMAIL;TYPE=INTERNET:rafael@rafaelgrealty.com
+ADR;TYPE=WORK:;;1225 W. 190th St.\, Suite 105;Gardena;CA;90248;USA
+NOTE:DRE #02244154 | Real Estate & Investment Property Advisor | Hablamos Español
+END:VCARD
