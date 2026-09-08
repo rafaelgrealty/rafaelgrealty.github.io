@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Rafael Gutierrez | Tarjeta Digital</title>
-  <meta name="theme-color" content="#0f5fb8" />
+  <meta name="theme-color" content="#0b4f93">
 
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     * {
@@ -20,153 +20,358 @@
       font-family: Arial, Helvetica, sans-serif;
       display: flex;
       justify-content: center;
-      padding: 16px 10px 30px;
+      padding: 15px 10px 35px;
     }
 
-    .card-shell {
+    .card {
       width: 100%;
       max-width: 430px;
-      background: #ffffff;
+      background: white;
       border-radius: 24px;
       overflow: hidden;
       box-shadow: 0 18px 45px rgba(14, 55, 110, 0.16);
     }
 
-    .card-canvas {
-      position: relative;
+    .photo {
       width: 100%;
-      line-height: 0;
+      height: 480px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
-    .card-canvas img {
-      width: 100%;
+    .brand {
+      background: linear-gradient(135deg, #0b4f93 0%, #0e65b5 100%);
+      color: white;
+      text-align: center;
+      padding: 26px 20px 24px;
+    }
+
+    .brand-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .rg-box {
+      width: 120px;
+      padding-right: 16px;
+      border-right: 2px solid rgba(255,255,255,0.8);
+    }
+
+    .rg-logo {
+      width: 100px;
       height: auto;
-      display: block;
-      user-select: none;
-      -webkit-user-drag: none;
     }
 
-    .hotspot {
-      position: absolute;
-      display: block;
-      background: rgba(255, 255, 255, 0);
-      border-radius: 18px;
+    .name-box {
+      text-align: left;
+    }
+
+    .name {
+      font-size: 28px;
+      line-height: 1.05;
+      letter-spacing: 2px;
+      font-weight: 300;
+    }
+
+    .broker {
+      margin-top: 9px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .role {
+      font-size: 23px;
+      font-weight: 800;
+      margin-top: 5px;
+    }
+
+    .dre {
+      font-size: 17px;
+      margin-top: 9px;
+    }
+
+    .advisor {
+      font-size: 17px;
+      line-height: 1.35;
+      margin-top: 15px;
+    }
+
+    .spanish {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 9px 18px;
+      border: 2px solid rgba(255,255,255,0.9);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .buttons {
+      padding: 20px 18px 8px;
+    }
+
+    .button {
+      display: grid;
+      grid-template-columns: 45px 1fr 22px;
+      align-items: center;
+      gap: 10px;
+      min-height: 66px;
+      margin-bottom: 10px;
+      padding: 8px 14px;
+      background: linear-gradient(90deg, #08447f, #0c5da6);
+      color: white;
       text-decoration: none;
-      z-index: 5;
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(13,79,147,0.15);
     }
 
-    .hotspot:hover {
-      background: rgba(255, 255, 255, 0.06);
+    .button i {
+      font-size: 24px;
+      text-align: center;
     }
 
-    .hotspot:focus-visible,
-    .social-icon:focus-visible {
-      outline: 3px solid rgba(20, 99, 210, 0.45);
-      outline-offset: 2px;
+    .button-text {
+      font-size: 17px;
+      font-weight: 500;
     }
 
-    /* BOTONES PRINCIPALES */
-    .save-contact {
-      left: 4.7%;
-      top: 68.8%;
-      width: 91.8%;
-      height: 5.25%;
+    .arrow {
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 200;
     }
 
-    .call-work {
-      left: 4.7%;
-      top: 74.45%;
-      width: 91.8%;
-      height: 5.25%;
+    .services {
+      text-align: center;
+      padding: 22px 12px 15px;
+      color: #0b4f93;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
     }
 
-    .call-mobile {
-      left: 4.7%;
-      top: 80.1%;
-      width: 91.8%;
-      height: 5.25%;
-    }
-
-    .email-link {
-      left: 4.7%;
-      top: 85.8%;
-      width: 91.8%;
-      height: 5.25%;
-    }
-
-    /* REDES SOCIALES ABAJO */
-    .social-row {
-      position: absolute;
-      left: 50%;
-      bottom: 6.1%;
-      transform: translateX(-50%);
+    .socials {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 14px;
-      width: 100%;
-      padding: 0 16px;
-      z-index: 6;
-      line-height: 1;
+      gap: 22px;
+      padding: 10px 15px 28px;
     }
 
-    .social-icon {
-      width: clamp(42px, 11vw, 54px);
-      height: clamp(42px, 11vw, 54px);
+    .social {
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      background: #0e57ad;
-      color: #ffffff;
-      display: inline-flex;
+      background: #0b4f93;
+      color: white;
+      display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      font-size: clamp(18px, 4.8vw, 24px);
-      box-shadow: 0 6px 14px rgba(10, 61, 130, 0.18);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-size: 22px;
+      box-shadow: 0 4px 10px rgba(11,79,147,0.18);
     }
 
-    .social-icon:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(10, 61, 130, 0.24);
+    .footer {
+      text-align: center;
+      color: #0b4f93;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      padding: 0 15px 25px;
+    }
+
+    @media (max-width: 390px) {
+      .photo {
+        height: 440px;
+      }
+
+      .name {
+        font-size: 25px;
+      }
+
+      .broker {
+        font-size: 11px;
+      }
+
+      .button-text {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <div class="card-shell">
-    <div class="card-canvas">
-      <!-- Imagen principal de la tarjeta -->
-      <img src="rafael_gutierrez_real_estate_card.jpeg" alt="Tarjeta digital de Rafael Gutierrez" />
+  <main class="card">
 
-      <!-- Zonas clickeables -->
-      <a class="hotspot save-contact" href="rafael-gutierrez.vcf" download aria-label="Guardar contacto"></a>
+    <!-- FOTO -->
+    <img
+      class="photo"
+      src="rafael pic 1.jpg"
+      alt="Rafael Gutierrez"
+    >
 
-      <a class="hotspot call-work" href="tel:+14242626008" aria-label="Llamar al número de trabajo"></a>
+    <!-- INFORMACION PRINCIPAL -->
+    <section class="brand">
 
-      <a class="hotspot call-mobile" href="tel:+16236940386" aria-label="Llamar al número móvil"></a>
+      <div class="brand-top">
 
-      <a class="hotspot email-link" href="mailto:rafael@rafaelgrealty.com" aria-label="Enviar correo a Rafael"></a>
+        <div class="rg-box">
+          <svg class="rg-logo" viewBox="0 0 220 150" aria-label="RG">
+            <text x="18" y="112"
+                  fill="#ffffff"
+                  font-family="Georgia, 'Times New Roman', serif"
+                  font-size="128"
+                  font-weight="400">R</text>
 
-      <!-- Redes sociales -->
-      <div class="social-row">
-        <a class="social-icon" href="https://www.instagram.com/rafaelrealestatepro" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
+            <text x="102" y="122"
+                  fill="#ffffff"
+                  font-family="Georgia, 'Times New Roman', serif"
+                  font-size="118"
+                  font-weight="400">G</text>
 
-        <a class="social-icon" href="https://www.facebook.com/profile.php?id=61567725307381" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
+            <!-- Techo -->
+            <path d="M87 82 L129 48 L187 82"
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
 
-        <a class="social-icon" href="https://www.linkedin.com/in/rafaelrealestatepro" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
+            <!-- Ventana 4 cuadros -->
+            <rect x="114" y="73" width="10" height="10" fill="#ffffff" rx="1"/>
+            <rect x="127" y="73" width="10" height="10" fill="#ffffff" rx="1"/>
+            <rect x="114" y="86" width="10" height="10" fill="#ffffff" rx="1"/>
+            <rect x="127" y="86" width="10" height="10" fill="#ffffff" rx="1"/>
+          </svg>
+        </div>
 
-        <a class="social-icon" href="https://youtube.com/@rafaelgrealty" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
+        <div class="name-box">
+          <div class="name">
+            RAFAEL<br>
+            GUTIERREZ
+          </div>
+
+          <div class="broker">
+            Coldwell Banker Envision
+          </div>
+        </div>
+
       </div>
+
+      <div class="role">REALTOR®</div>
+
+      <div class="dre">
+        DRE #02244154
+      </div>
+
+      <div class="advisor">
+        Real Estate &amp; Investment Property Advisor
+      </div>
+
+      <div class="spanish">
+        HABLAMOS ESPAÑOL
+      </div>
+
+    </section>
+
+    <!-- BOTONES -->
+    <section class="buttons">
+
+      <a class="button" href="rafael-gutierrez.vcf">
+        <i class="fa-solid fa-user-plus"></i>
+        <span class="button-text">
+          Save Contact / Guardar contacto
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+      <a class="button" href="tel:+14242626008">
+        <i class="fa-solid fa-phone"></i>
+        <span class="button-text">
+          Work (424) 262-6008
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+      <a class="button" href="tel:+16236940386">
+        <i class="fa-solid fa-briefcase"></i>
+        <span class="button-text">
+          Móvil (623) 694-0386
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+      <a class="button" href="mailto:rafael@rafaelgrealty.com">
+        <i class="fa-solid fa-envelope"></i>
+        <span class="button-text">
+          rafael@rafaelgrealty.com
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+    </section>
+
+    <div class="services">
+      BUY &nbsp; | &nbsp; SELL &nbsp; | &nbsp; INVEST &nbsp; | &nbsp; BUILD WEALTH
     </div>
-  </div>
+
+    <!-- REDES SOCIALES -->
+    <section class="socials">
+
+      <a
+        class="social"
+        href="https://www.instagram.com/rafaelrealestatepro"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a
+        class="social"
+        href="https://www.facebook.com/profile.php?id=61567725307381"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+      >
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+
+      <a
+        class="social"
+        href="https://www.linkedin.com/in/rafaelrealestatepro"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+      >
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+
+      <a
+        class="social"
+        href="https://youtube.com/@rafaelgrealty"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="YouTube"
+      >
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+    </section>
+
+    <div class="footer">
+      LOS ANGELES &nbsp; | &nbsp; REAL ESTATE &nbsp; | &nbsp; OPPORTUNITY
+    </div>
+
+  </main>
 
 </body>
 </html>
