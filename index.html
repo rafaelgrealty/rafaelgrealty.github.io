@@ -1,182 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Rafael Gutierrez | Real Estate</title>
+  <meta name="theme-color" content="#0b4f93">
   <style>
-    :root{
-      --navy:#0b2c5f;
-      --blue:#143f7a;
-      --light:#f4f7fb;
-      --text:#172033;
-      --muted:#667085;
-      --white:#ffffff;
-    }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:linear-gradient(180deg,#dff2ff 0%,#f3f9ff 45%,#ffffff 100%);
-      color:var(--text);
+    html,body{margin:0;padding:0;background:#fff;font-family:Arial,Helvetica,sans-serif}
+    body{display:flex;justify-content:center;min-height:100vh}
+    .card-wrap{position:relative;width:100%;max-width:900px;margin:0 auto;background:#fff}
+    .card-image{width:100%;height:auto;display:block;user-select:none;-webkit-user-drag:none}
+    .hotspot{
+      position:absolute;display:block;z-index:10;border-radius:16px;
+      text-decoration:none;background:rgba(255,255,255,0);
+      -webkit-tap-highlight-color:transparent;
     }
-    .wrap{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px;
-    }
-    .card{
-      width:100%;
-      max-width:520px;
-      background:var(--white);
-      border-radius:24px;
-      box-shadow:0 18px 50px rgba(11,44,95,.14);
-      overflow:hidden;
-      border:1px solid #e7ecf3;
-    }
-    .top{
-      background:linear-gradient(135deg,#143f7a 0%,#2f80c9 100%);
-      color:white;
-      padding:0 0 28px;
-      text-align:center;
-    }
- .wave{
-  height:34px;
-  margin:-14px 0 0;
-  background:linear-gradient(135deg,#24a8ff 0%,#0f5fb8 55%,#143f7a 100%);
-  border-radius:50% 50% 0 0 / 70% 100% 0 0;
-  transform:skewY(-3deg);
-  transform-origin:left center;
-}
+    .hotspot:focus-visible{outline:3px solid rgba(255,255,255,.95);outline-offset:-4px}
 
-    .brand{
-      font-size:15px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      opacity:.9;
-      margin-bottom:20px;
-    }
-    h1{
-      margin:0;
-      font-size:34px;
-      line-height:1.05;
-    }
-    .role{
-      margin-top:10px;
-      font-size:18px;
-      font-weight:700;
-    }
-    .dre{
-      margin-top:6px;
-      font-size:15px;
-      opacity:.9;
-    }
-    .tag{
-      margin-top:16px;
-      font-size:17px;
-      line-height:1.4;
-    }
-    .spanish{
-      display:inline-block;
-      margin-top:12px;
-      padding:7px 12px;
-      border:1px solid rgba(255,255,255,.45);
-      border-radius:999px;
-      font-size:14px;
-      letter-spacing:1px;
-      font-weight:700;
-    }
-    .content{padding:26px}
-    .contact{
-      display:grid;
-      gap:12px;
-    }
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      width:100%;
-      text-decoration:none;
-      color:white;
-      background:var(--blue);
-      padding:15px 16px;
-      border-radius:14px;
-      font-weight:700;
-      font-size:17px;
-    }
-    .btn.secondary{
-      background:#eef3f9;
-      color:var(--navy);
-      border:1px solid #d8e1ec;
-    }
-    .info{
-      margin-top:22px;
-      padding:18px;
-      background:var(--light);
-      border-radius:16px;
-      line-height:1.55;
-    }
-    .info strong{color:var(--navy)}
-    .address{
-      margin-top:8px;
-      color:var(--muted);
-      font-size:15px;
-    }
-    .services{
-      margin-top:20px;
-      text-align:center;
-      font-weight:700;
-      color:var(--navy);
-      letter-spacing:1px;
-    }
-    .footer{
-      text-align:center;
-      padding:0 26px 26px;
-      color:var(--muted);
-      font-size:13px;
-    }
+    /* Main buttons */
+    .save {left:6.0%;top:64.1%;width:88.0%;height:4.9%}
+    .work {left:6.0%;top:69.5%;width:88.0%;height:4.9%}
+    .call {left:6.0%;top:74.9%;width:88.0%;height:4.9%}
+    .email{left:6.0%;top:80.3%;width:88.0%;height:4.9%}
+
+    /* Social icons */
+    .instagram{left:27.0%;top:90.1%;width:7.4%;height:4.6%;border-radius:12px}
+    .facebook {left:41.9%;top:90.1%;width:7.4%;height:4.6%;border-radius:12px}
+    .linkedin {left:56.8%;top:90.1%;width:7.4%;height:4.6%;border-radius:12px}
+    .youtube  {left:71.7%;top:90.1%;width:7.4%;height:4.6%;border-radius:12px}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <main class="card">
-      <section class="top">
-        
-        <img src="rafael pic 1.jpg" alt="Rafael Gutierrez" style="width:100%; height:260px; object-fit:cover; object-position:center top; border-radius:18px; margin:0 auto 24px; display:block;">
-        <img src="rafael-logo.png" alt="Rafael Gutierrez Real Estate" style="max-width:210px; width:58%; height:auto; margin:0 auto 18px; display:block;">
-        <div class="role">REALTOR®</div>
-        <div class="dre">DRE #02244154</div>
-        <div class="tag">Real Estate &amp; Investment Property Advisor</div>
-        <div class="spanish">HABLAMOS ESPAÑOL</div>
-      </section>
+  <main class="card-wrap">
+    <img class="card-image"
+         src="rafael_gutierrez_real_estate_card.png"
+         alt="Rafael Gutierrez Real Estate digital business card">
 
-      <section class="content">
-        <div class="contact">
-          <a class="btn" href="rafael-gutierrez.vcf">👤 Save Contact / Guardar contacto</a>
-<a class="btn" href="tel:+14242626008">📞 Call (424) 262-6008</a>
-<a class="btn" href="tel:+16236940386">📱 Cell (623) 694-0386</a>
-<a class="btn" href="mailto:rafael@rafaelgrealty.com">✉️ rafael@rafaelgrealty.com</a>
-        </div>
+    <a class="hotspot save"
+       href="rafael-gutierrez.vcf"
+       aria-label="Save Rafael Gutierrez contact"></a>
 
-        <div class="info">
-          <strong>Office</strong>
-          <div class="address">
-            1225 W. 190th St., Suite 105<br>
-            Gardena, CA 90248
-          </div>
-        </div>
+    <a class="hotspot work"
+       href="tel:+14242626008"
+       aria-label="Call work number 424-262-6008"></a>
 
-        <div class="services">BUY &nbsp; | &nbsp; SELL &nbsp; | &nbsp; INVEST &nbsp; | &nbsp; BUILD WEALTH</div>
-      </section>
+    <a class="hotspot call"
+       href="tel:+16236940386"
+       aria-label="Call 623-694-0386"></a>
 
-      <div class="footer">
-        Real People. Real Opportunities.<br>
-        Each Office is Independently Owned and Operated.
-      </div>
-    </main>
-  </div>
+    <a class="hotspot email"
+       href="mailto:rafael@rafaelgrealty.com"
+       aria-label="Email Rafael Gutierrez"></a>
+
+    <a class="hotspot instagram"
+       href="https://www.instagram.com/rafaelrealestatepro"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Instagram"></a>
+
+    <a class="hotspot facebook"
+       href="https://www.facebook.com/profile.php?id=61567725307381"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Facebook"></a>
+
+    <a class="hotspot linkedin"
+       href="https://www.linkedin.com/in/rafaelrealestatepro"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="LinkedIn"></a>
+
+    <a class="hotspot youtube"
+       href="https://youtube.com/@rafaelgrealty"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="YouTube"></a>
+  </main>
 </body>
 </html>
