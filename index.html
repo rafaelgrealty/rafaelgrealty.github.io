@@ -1,77 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Rafael Gutierrez | Real Estate</title>
-  <meta name="theme-color" content="#0b4f93">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Rafael Gutierrez | Tarjeta Digital</title>
+  <meta name="theme-color" content="#0f5fb8" />
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
   <style>
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:#fff;font-family:Arial,Helvetica,sans-serif}
-    body{display:flex;justify-content:center;min-height:100vh}
-    .card-wrap{position:relative;width:100%;max-width:900px;margin:0 auto;background:#fff}
-    .card-image{width:100%;height:auto;display:block;user-select:none;-webkit-user-drag:none}
-    .hotspot{
-      position:absolute;display:block;z-index:10;border-radius:16px;
-      text-decoration:none;background:rgba(255,255,255,0);
-      -webkit-tap-highlight-color:transparent;
+    * {
+      box-sizing: border-box;
     }
-    .hotspot:focus-visible{outline:3px solid rgba(255,255,255,.95);outline-offset:-4px}
 
-    /* Main buttons */
-    .save {left:6.0%;top:64.1%;width:88.0%;height:4.9%}
-    .work {left:6.0%;top:69.5%;width:88.0%;height:4.9%}
-    .call {left:6.0%;top:74.9%;width:88.0%;height:4.9%}
-    .email{left:6.0%;top:80.3%;width:88.0%;height:4.9%}
+    body {
+      margin: 0;
+      background: #eef3f8;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 16px 10px 30px;
+    }
 
-    /* Social icons */
-    .instagram{left:27.0%;top:90.1%;width:7.4%;height:4.6%;border-radius:12px}
-    .facebook {left:41.9%;top:90.1%;width:7.4%;height:4.6%;border-radius:12px}
-    .linkedin {left:56.8%;top:90.1%;width:7.4%;height:4.6%;border-radius:12px}
-    .youtube  {left:71.7%;top:90.1%;width:7.4%;height:4.6%;border-radius:12px}
+    .card-shell {
+      width: 100%;
+      max-width: 430px;
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(14, 55, 110, 0.16);
+    }
+
+    .card-canvas {
+      position: relative;
+      width: 100%;
+      line-height: 0;
+    }
+
+    .card-canvas img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .hotspot {
+      position: absolute;
+      display: block;
+      background: rgba(255, 255, 255, 0);
+      border-radius: 18px;
+      text-decoration: none;
+      z-index: 5;
+    }
+
+    .hotspot:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hotspot:focus-visible,
+    .social-icon:focus-visible {
+      outline: 3px solid rgba(20, 99, 210, 0.45);
+      outline-offset: 2px;
+    }
+
+    /* BOTONES PRINCIPALES */
+    .save-contact {
+      left: 4.7%;
+      top: 68.8%;
+      width: 91.8%;
+      height: 5.25%;
+    }
+
+    .call-work {
+      left: 4.7%;
+      top: 74.45%;
+      width: 91.8%;
+      height: 5.25%;
+    }
+
+    .call-mobile {
+      left: 4.7%;
+      top: 80.1%;
+      width: 91.8%;
+      height: 5.25%;
+    }
+
+    .email-link {
+      left: 4.7%;
+      top: 85.8%;
+      width: 91.8%;
+      height: 5.25%;
+    }
+
+    /* REDES SOCIALES ABAJO */
+    .social-row {
+      position: absolute;
+      left: 50%;
+      bottom: 6.1%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 0 16px;
+      z-index: 6;
+      line-height: 1;
+    }
+
+    .social-icon {
+      width: clamp(42px, 11vw, 54px);
+      height: clamp(42px, 11vw, 54px);
+      border-radius: 50%;
+      background: #0e57ad;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: clamp(18px, 4.8vw, 24px);
+      box-shadow: 0 6px 14px rgba(10, 61, 130, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(10, 61, 130, 0.24);
+    }
   </style>
 </head>
 <body>
-  <main class="card-wrap">
-    <img class="card-image"
-         src="rafael_gutierrez_real_estate_card.jpeg"
-         alt="Rafael Gutierrez Real Estate digital business card">
 
-    <a class="hotspot save"
-       href="rafael-gutierrez.vcf"
-       aria-label="Save Rafael Gutierrez contact"></a>
+  <div class="card-shell">
+    <div class="card-canvas">
+      <!-- Imagen principal de la tarjeta -->
+      <img src="rafael_gutierrez_real_estate_card.jpeg" alt="Tarjeta digital de Rafael Gutierrez" />
 
-    <a class="hotspot work"
-       href="tel:+14242626008"
-       aria-label="Call work number 424-262-6008"></a>
+      <!-- Zonas clickeables -->
+      <a class="hotspot save-contact" href="rafael-gutierrez.vcf" download aria-label="Guardar contacto"></a>
 
-    <a class="hotspot call"
-       href="tel:+16236940386"
-       aria-label="Call 623-694-0386"></a>
+      <a class="hotspot call-work" href="tel:+14242626008" aria-label="Llamar al número de trabajo"></a>
 
-    <a class="hotspot email"
-       href="mailto:rafael@rafaelgrealty.com"
-       aria-label="Email Rafael Gutierrez"></a>
+      <a class="hotspot call-mobile" href="tel:+16236940386" aria-label="Llamar al número móvil"></a>
 
-    <a class="hotspot instagram"
-       href="https://www.instagram.com/rafaelrealestatepro"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Instagram"></a>
+      <a class="hotspot email-link" href="mailto:rafael@rafaelgrealty.com" aria-label="Enviar correo a Rafael"></a>
 
-    <a class="hotspot facebook"
-       href="https://www.facebook.com/profile.php?id=61567725307381"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Facebook"></a>
+      <!-- Redes sociales -->
+      <div class="social-row">
+        <a class="social-icon" href="https://www.instagram.com/rafaelrealestatepro" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
 
-    <a class="hotspot linkedin"
-       href="https://www.linkedin.com/in/rafaelrealestatepro"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="LinkedIn"></a>
+        <a class="social-icon" href="https://www.facebook.com/profile.php?id=61567725307381" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
 
-    <a class="hotspot youtube"
-       href="https://youtube.com/@rafaelgrealty"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="YouTube"></a>
-  </main>
+        <a class="social-icon" href="https://www.linkedin.com/in/rafaelrealestatepro" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <a class="social-icon" href="https://youtube.com/@rafaelgrealty" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
